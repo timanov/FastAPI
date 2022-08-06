@@ -9,6 +9,14 @@ pip3 install passlib
 pip3 install bcrypt
 pip3 install python-jose
 
+docker run --name habr-pg-13.3 -p 5432:5432 -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=fast_api -d postgres:13.3
+
+# container stop
+docker container stop SOMENAME
+
+# container removal
+docker rm -f SOMENAME
+
  uvicorn main:app --reload
  python3 -m uvicorn main:app --reload
 

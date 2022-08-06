@@ -25,12 +25,10 @@ class UserRepository(BaseRepository):
             hashed_password=hash_password(u.password),
             is_company=u.is_company,
             created_at=datetime.datetime.utcnow(),
-            updated_at=datetime.datetime.utcnow()
+            updated_at=datetime.datetime.utcnow(),
         )
-
-        values = {**users.dict()}
+        values = {**user.dict()}
         values.pop("id", None)
-
         query = users.insert().values(**values)
         user.id = await self.database.execute(query)
         return user
@@ -45,11 +43,9 @@ class UserRepository(BaseRepository):
             created_at=datetime.datetime.utcnow(),
             updated_at=datetime.datetime.utcnow()
         )
-
-        values = {**users.dict()}
+        values = {**user.dict()}
         values.pop("created_at", None)
         values.pop("id", None)
-
         query = users.update().where(users.c.id==id).values(**values)
         await self.database.execute(query)
         return user

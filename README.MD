@@ -4,6 +4,9 @@ pip3 install sqlalchemy
 pip3 install databases
 pip3 install "databases[postgresql]"
 pip3 install psycopg2-binary   
+pip3 install pydantic[email]
+pip3 install passlib
+pip3 install bcrypt
 
  uvicorn main:app --reload
  python3 -m uvicorn main:app --reload
@@ -25,3 +28,9 @@ endpoints - handler'ы нашего приложения
 models - способ описания данных, описание данных для отображения сущностей, получение данных от сущностей и хранение в базе данных.
 repository - паттерн, срок абстрации, инкапсулирующий в себе все, что относится к способу хранения данных. 
 
+
+
+INSERT INTO users
+VALUES (2, 'mishka123@mail.ru', 'Mishka', 'base64', True, '2022-08-06 15:15:20.804', '2022-08-06 15:15:20.804');
+
+SELECT * FROM users;

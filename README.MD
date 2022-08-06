@@ -1,5 +1,5 @@
 pip3 install fastapi
-pip3 install unicorn[standard]
+pip3 install uvicorn[standard]
 pip3 install sqlalchemy
 pip3 install databases
 pip3 install "databases[postgresql]"

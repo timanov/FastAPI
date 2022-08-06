@@ -1,0 +1,11 @@
+# app
+fastapi
+uvicorn[standard]
+sqlalchemy
+databases
+"databases[postgresql]"
+psycopg2-binary   
+pydantic[email]
+passlib
+bcrypt
+python-jose

@@ -8,7 +8,7 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 
-@app.on("startup")
+@app.on_event("startup")
 async def startup():
     await database.connect()
 

@@ -7,7 +7,7 @@ pip3 install psycopg2-binary
 pip3 install pydantic[email]
 pip3 install passlib
 pip3 install bcrypt
-pip3 install jwt
+pip3 install python-jose
 
  uvicorn main:app --reload
  python3 -m uvicorn main:app --reload

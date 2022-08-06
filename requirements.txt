@@ -3,7 +3,7 @@ fastapi
 uvicorn[standard]
 sqlalchemy
 databases
-"databases[postgresql]"
+databases[postgresql]
 psycopg2-binary   
 pydantic[email]
 passlib

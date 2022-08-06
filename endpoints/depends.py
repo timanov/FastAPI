@@ -9,7 +9,7 @@ def get_user_repository() -> UserRepository:
 
 async def get_current_user(
     users: UserRepository = Depends(get_user_repository),
-    token: str = Depends(JWTBearer)
+    token: str = Depends(JWTBearer())
 ) -> User:
     cred_exception = HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Credentials are not valid")
     payload = decode_access_token(token)

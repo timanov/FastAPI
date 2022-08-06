@@ -51,7 +51,7 @@ class UserRepository(BaseRepository):
         return user
 
     async def get_by_email(self, email: str) -> Optional[User]:
-        query = users.select().where(users.c.email==email).first()
+        query = users.select().where(users.c.email==email)
         user = await self.database.fetch_one(query)
         if user is None:
             return None
